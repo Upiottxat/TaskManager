@@ -1,6 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import authRoutes from "./Routes/auth.routes.js"
+import tasksRoutes from "./Routes/tasks.routes.js"
 import { connectToDatabase } from './config/db.js';
 dotenv.config()
 const app = express();
@@ -11,7 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 
 
 app.use("/api/auth", authRoutes)
-
+app.use("/api/tasks", tasksRoutes)
 
 app.get("/", (req, res) => {
     res.send("Hello world !!")
