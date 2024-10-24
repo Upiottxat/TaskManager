@@ -1,19 +1,19 @@
 import mysql from 'mysql2/promise'
-export const conn = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'taskmanager'
-})
-export const connectToDatabase = () => {
+export const conn = connectToDatabase();
 
-    // conn.connect((err, res) => {
-    //     if (err) return console.log(err);
-    //     console.log("connection established");
+const connectToDatabase = () => {
+    try {
+        const connection = mysql.createConnection({
+            host: 'localhost',
+            user: 'root',
+            password: '',
+            database: 'taskmanager'
+        })
+        console.log("connected to database");
+        return connection
 
-    // })
-
-
-
+    } catch (error) {
+        console.log("error connecting to mysql database ", error);
+    }
 }
 
