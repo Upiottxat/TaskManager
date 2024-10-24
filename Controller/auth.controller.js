@@ -47,5 +47,19 @@ export const signup = async (req, res) => {
 }
 
 export const logout = (req, res) => {
+    try {
+        req.cookie("jwt", "", { maxAge: 0 });
+        res.status(200).json({
+            msg: "Logged out successfully",
+            error: false
+        })
 
+    } catch (error) {
+        console.log("error in  logout controller ", error.message);
+        res.status(500).json({
+            success: false,
+            error: "Internal server error",
+        })
+
+    }
 }
