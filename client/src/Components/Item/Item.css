@@ -1,0 +1,17 @@
+.OptionsIcon:hover{
+background-color: aquamarine;
+transition: all 0.3s;
+
+}
+.OptionsIcon{
+    border-radius: 50%;
+  
+}
+.deleteIcon:hover{
+    background-color:brown;
+    color: aliceblue;
+    transition: all 0.3s;
+}
+.innerItem:hover{
+transition: all 0.3s;
+}

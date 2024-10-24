@@ -1,0 +1,5 @@
+.plus_icon:hover{
+    background-color: rebeccapurple;
+    color: aliceblue;
+    transition: all 0.3s;
+}
