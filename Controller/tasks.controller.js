@@ -2,8 +2,7 @@ import { GetTasks, RemoveTask, EditTask, ChangeTaskStatus, AddTask } from '../Mo
 
 // Get all tasks for a specific user
 export const getTasks = async (req, res) => {
-    const { userId } = req.params;
-
+    const { userId } = req.user.userId;
     try {
         const tasks = await GetTasks(userId);
 
@@ -14,7 +13,7 @@ export const getTasks = async (req, res) => {
     }
 };
 export const addtask = async (req, res) => {
-    const { userId } = req.params;
+    const { userId } = req.user.userId;
     const { Title, Status } = req.body; // Title and Status passed in request body
 
     if (!Title || !Status) {
