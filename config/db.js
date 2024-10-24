@@ -1,5 +1,4 @@
 import mysql from 'mysql2/promise'
-export const conn = connectToDatabase();
 
 const connectToDatabase = () => {
     try {
@@ -16,4 +15,6 @@ const connectToDatabase = () => {
         console.log("error connecting to mysql database ", error);
     }
 }
+export const conn = connectToDatabase();
+
 
